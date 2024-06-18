@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="outer" style="padding: 50px 0">
+  <form style="width: 100%" [formGroup]="form" (ngSubmit)="login()">
+    <div class="container">
+
+      <h1>Login</h1>
+      <hr/>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input formControlName="email" type="email" class="form-control" id="username" autocomplete="off">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input formControlName="password" type="text" class="form-control" id="password" autocomplete="off">
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <button class="btn btn-primary col-12" [disabled]="form.invalid" type="submit">Login</button>
+          <a routerLink="/security/signup" class="btn btn-dark col-12 mt-4">Create an Account</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
