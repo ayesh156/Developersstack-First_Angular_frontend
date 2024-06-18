@@ -3,7 +3,8 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { httpManagerInterceptor } from "./modules/share/interceptors/http-manager.interceptor";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,11 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   providers: [
     provideClientHydration(),
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:httpManagerInterceptor,
+      multi:true
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,1 +1,39 @@
-<p>new-doctor works!</p>
+<div class="outer" style="padding: 50px 0">
+  <form style="width: 100%" [formGroup]="form" (ngSubmit)="saveDoctor()">
+    <div class="container">
+
+      <h1>Add New Doctor</h1>
+      <hr/>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input formControlName="name" type="text" class="form-control" id="name">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="contact">Contact</label>
+            <input formControlName="contact" type="text" class="form-control" id="contact">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input formControlName="address" type="text" class="form-control" id="address">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="salary">Salary</label>
+            <input formControlName="salary" type="text" class="form-control" id="salary" >
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <button class="btn btn-primary col-12" type="submit">Save Doctor</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
